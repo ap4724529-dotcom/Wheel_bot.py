@@ -971,6 +971,20 @@
           tx.set(db.collection('referralCodes').doc(referral), { uid: userId });
         }
       });
+      
+      // --- YAHAN BADLAV KIYA GAYA HAI ---
+      // Show the main UI immediately after we know the user is in Telegram
+      showInitialUI(); 
+
+      // attach real-time listener to update data
+      userRef.onSnapshot(snap => {
+        userDoc = snap.exists ? snap.data() : null;
+        // If lastLoginDate isn't today, give daily bonus once
+        checkAndApplyDailyBonus(userId).catch(console.error);
+        // showInitialUI(); // <-- Is line ko yahan se hata diya gaya hai
+        updateUIFromUserData();
+      });
+    }
 
       // attach real-time listener
       userRef.onSnapshot(snap => {
