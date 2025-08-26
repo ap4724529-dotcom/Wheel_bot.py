@@ -801,8 +801,10 @@
     }
 
     function updateUIFromUserData() {
-      if (!userDoc) return;
-      const data = userDoc;
+  loadingEl.hidden = true;
+  if (!userDoc) return;
+  const data = userDoc;
+
       pointsBalanceEl.textContent = data.points ?? 0;
       walletPointsEl.textContent = data.points ?? 0;
       walletBalanceEl.textContent = `₹${((data.points ?? 0) / POINTS_PER_RUPEE).toFixed(2)}`;
