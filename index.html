@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
   <style>
+    /* (CSS styles are the same as the previous version) */
     :root {
       --bg1-light: #f0f8ff; --bg2-light: #ffffff; --accent-light: #00a2ff; --accent-2-light: #00e5ff;
       --accent-glow-light: rgba(0, 162, 255, 0.25); --card-light: #ffffff; --card-border-light: rgba(0, 162, 255, 0.2);
@@ -34,7 +35,7 @@
       --glass: var(--glass-dark); --text-primary: var(--text-primary-dark); --text-secondary: var(--text-secondary-dark);
       --text-muted: var(--text-muted-dark);
     }
-    * { box-sizing: border-box; } html, body { height: 100%; margin: 0; background: var(--bg2); color: var(--text-primary); font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; } .app { max-width: 460px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; padding-bottom: 72px; position: relative; } header.app-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--card-border); } body[data-theme="light"] header.app-head { background: rgba(255, 255, 255, 0.8); } body[data-theme="dark"] header.app-head { background: rgba(15, 23, 42, 0.8); } #theme-toggle { background: none; border: 1px solid var(--card-border); color: var(--text-muted); width: 40px; height: 40px; border-radius: 12px; cursor: pointer; font-size: 18px; } .brand { display: flex; gap: 12px; align-items: center; } .logo { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: flex; align-items: center; justify-content: center; font-weight: 700; box-shadow: 0 4px 15px var(--accent-glow); font-size: 18px; color: white; } .brand h1 { font-size: 18px; margin: 0; font-weight: 700; color: var(--text-primary); } body[data-theme="dark"] .brand h1 { background: linear-gradient(to right, #fff, #cbd5e1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } .brand .subtitle { font-size: 11px; color: var(--text-muted); margin: 0; line-height: 1.2; } .balance { background: var(--glass); padding: 8px 16px; border-radius: 12px; font-weight: 600; font-size: 14px; border: 1px solid var(--card-border); display: flex; align-items: center; gap: 6px; } .balance i { color: var(--accent); } main.content { flex: 1; padding: 16px; overflow: auto; } .card { background: var(--card); border-radius: 16px; padding: 20px; margin-bottom: 16px; border: 1px solid var(--card-border); } body[data-theme="light"] .card { box-shadow: 0 8px 30px rgba(0, 162, 255, 0.1); } body[data-theme="dark"] .card { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); backdrop-filter: blur(10px); } .center { text-align: center; } h2, h3 { font-weight: 600; color: var(--text-primary); } h2 { font-size: 18px; margin: 0 0 8px 0; } h3 { font-size: 16px; margin: 0 0 12px 0; } p.muted { color: var(--text-muted); font-size: 13px; margin: 0; line-height: 1.5; } .wheel-container { position: relative; margin: 20px auto; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; } .wheel-wrap { position: relative; width: 100%; height: 100%; } .wheel-pointer { position: absolute; left: 50%; transform: translateX(-50%); top: -20px; width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-top: 30px solid var(--text-primary); z-index: 30; filter: drop-shadow(0 4px 6px rgba(0,0,0,.2)); } .wheel { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; transition: transform 5s cubic-bezier(0.25, 1, 0.5, 1); will-change: transform; box-shadow: 0 0 0 6px var(--card-border), 0 10px 30px rgba(0, 0, 0, 0.1); } .wheel-center { position: absolute; width: 70px; height: 70px; background: var(--bg1); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 31; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px solid var(--card-border); box-shadow: 0 0 15px rgba(0,0,0,0.2); } .spin-count { font-size: 24px; font-weight: 700; color: var(--text-primary); line-height: 1; } .spin-label { font-size: 11px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; } .slice-text { font-size: 12px; fill: #fff; font-weight: 700; } body[data-theme="light"] .slice-text { fill: var(--text-primary); } .spin-btn, .share-btn { display: block; width: 100%; padding: 16px; border-radius: 12px; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; } .spin-btn { border: none; background: linear-gradient(90deg, var(--accent-2), var(--accent)); color: #fff; box-shadow: 0 10px 20px var(--accent-glow); margin-top: 20px; } .share-btn { border: 1px solid var(--card-border); background: transparent; color: var(--accent); margin-top: 12px; } .spin-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 14px 25px var(--accent-glow); } .share-btn:hover { background: var(--glass); } .spin-btn:disabled { opacity: .5; cursor: not-allowed; } .spins-counter { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--glass); border-radius: 20px; color: var(--accent); font-size: 13px; font-weight: 500; margin-top: 8px; border: 1px solid var(--card-border); } nav.bottom { position: fixed; left: 0; right: 0; bottom: 0; max-width: 460px; margin: 0 auto; padding: 12px 16px; box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1); border-radius: 20px 20px 0 0; display: flex; gap: 8px; z-index: 40; backdrop-filter: blur(12px); border-top: 1px solid var(--card-border); } body[data-theme="light"] nav.bottom { background: rgba(255, 255, 255, 0.8); } body[data-theme="dark"] nav.bottom { background: rgba(15, 23, 42, 0.8); } .tab { flex: 1; text-align: center; padding: 10px 6px; border-radius: 12px; color: var(--text-muted); font-weight: 500; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; gap: 4px; } .tab i { font-size: 18px; } .tab.active { background: var(--accent); color: #fff; box-shadow: 0 5px 15px var(--accent-glow); transform: translateY(-2px); } input[type="text"], input[type="number"] { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid var(--card-border); background: var(--bg1); color: var(--text-primary); outline: none; font-family: 'Poppins', sans-serif; font-size: 14px; transition: all 0.3s ease; } input[type="text"]:focus, input[type="number"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); } .loading-full { display: flex; align-items: center; justify-content: center; min-height: 240px; } .spinner { border: 3px solid var(--card-border); border-top: 3px solid var(--accent); width: 42px; height: 42px; border-radius: 50%; animation: spin 1s linear infinite; } @keyframes spin { to { transform: rotate(360deg); } } .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; } .stat-card { background: var(--glass); border-radius: 12px; padding: 14px; text-align: center; border: 1px solid var(--card-border); } .stat-label { font-size: 12px; color: var(--text-muted); } .stat-value { font-size: 20px; font-weight: 700; margin: 6px 0; color: var(--text-primary); } .referral-box { background: linear-gradient(135deg, rgba(0, 170, 255, 0.05), rgba(0, 229, 255, 0.05)); border-radius: 12px; padding: 16px; text-align: center; margin: 16px 0; border: 1px solid var(--card-border); } .referral-code { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: 1px; margin: 10px 0; padding: 10px; background: var(--glass); border-radius: 8px; } .toast { position: fixed; left: 50%; transform: translateX(-50%); top: 20px; padding: 14px 20px; border-radius: 12px; z-index: 9999; color: #fff; display: none; font-weight: 600; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); backdrop-filter: blur(10px); max-width: 90%; text-align: center; font-size: 14px; } .toast.show { display: block; animation: toastIn 0.4s ease; } .toast.success { background: rgba(16, 185, 129, 0.9); } .toast.error { background: rgba(239, 68, 68, 0.9); } .toast.warning { background: rgba(245, 158, 11, 0.9); color: #000; } @keyframes toastIn { from { opacity: 0; transform: translate(-50%, -10px); } to { opacity: 1; transform: translate(-50%, 0); } }
+    * { box-sizing: border-box; } html, body { height: 100%; margin: 0; background: var(--bg2); color: var(--text-primary); font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; } .app { max-width: 460px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; padding-bottom: 72px; position: relative; } header.app-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--card-border); } body[data-theme="light"] header.app-head { background: rgba(255, 255, 255, 0.8); } body[data-theme="dark"] header.app-head { background: rgba(15, 23, 42, 0.8); } #theme-toggle { background: none; border: 1px solid var(--card-border); color: var(--text-muted); width: 40px; height: 40px; border-radius: 12px; cursor: pointer; font-size: 18px; } .brand { display: flex; gap: 12px; align-items: center; } .logo { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: flex; align-items: center; justify-content: center; font-weight: 700; box-shadow: 0 4px 15px var(--accent-glow); font-size: 18px; color: white; } .brand h1 { font-size: 18px; margin: 0; font-weight: 700; color: var(--text-primary); } body[data-theme="dark"] .brand h1 { background: linear-gradient(to right, #fff, #cbd5e1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } .brand .subtitle { font-size: 11px; color: var(--text-muted); margin: 0; line-height: 1.2; } .balance { background: var(--glass); padding: 8px 16px; border-radius: 12px; font-weight: 600; font-size: 14px; border: 1px solid var(--card-border); display: flex; align-items: center; gap: 6px; } .balance i { color: var(--accent); } main.content { flex: 1; padding: 16px; overflow: auto; } .card { background: var(--card); border-radius: 16px; padding: 20px; margin-bottom: 16px; border: 1px solid var(--card-border); } body[data-theme="light"] .card { box-shadow: 0 8px 30px rgba(0, 162, 255, 0.1); } body[data-theme="dark"] .card { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); backdrop-filter: blur(10px); } .center { text-align: center; } h2, h3 { font-weight: 600; color: var(--text-primary); } h2 { font-size: 18px; margin: 0 0 8px 0; } h3 { font-size: 16px; margin: 0 0 12px 0; } p.muted { color: var(--text-muted); font-size: 13px; margin: 0; line-height: 1.5; } .wheel-container { position: relative; margin: 20px auto; width: 320px; height: 320px; display: flex; align-items: center; justify-content: center; } .wheel-static-border { position: absolute; width: 310px; height: 310px; background: var(--bg2); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 28; box-shadow: inset 0 0 20px rgba(0,0,0,0.2); } .wheel-wrap { position: relative; width: 300px; height: 300px; z-index: 29; } .wheel-pointer { position: absolute; left: 50%; transform: translateX(-50%); top: -20px; width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-top: 30px solid var(--text-primary); z-index: 30; filter: drop-shadow(0 4px 6px rgba(0,0,0,.2)); } .wheel { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; transition: transform 5s cubic-bezier(0.25, 1, 0.5, 1); will-change: transform; box-shadow: 0 0 0 6px var(--card-border), 0 10px 30px rgba(0, 0, 0, 0.1); } .wheel-center { position: absolute; width: 70px; height: 70px; background: var(--bg1); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 31; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px solid var(--card-border); box-shadow: 0 0 15px rgba(0,0,0,0.2); } .spin-count { font-size: 24px; font-weight: 700; color: var(--text-primary); line-height: 1; } .spin-label { font-size: 11px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; } .slice-text { font-size: 12px; fill: #fff; font-weight: 700; } body[data-theme="light"] .slice-text { fill: var(--text-primary); } .spin-btn, .share-btn { display: block; width: 100%; padding: 16px; border-radius: 12px; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; } .spin-btn { border: none; background: linear-gradient(90deg, var(--accent-2), var(--accent)); color: #fff; box-shadow: 0 10px 20px var(--accent-glow); margin-top: 20px; } .share-btn { border: 1px solid var(--card-border); background: transparent; color: var(--accent); margin-top: 12px; } .spin-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 14px 25px var(--accent-glow); } .share-btn:hover { background: var(--glass); } .spin-btn:disabled { opacity: .5; cursor: not-allowed; } .spins-counter { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--glass); border-radius: 20px; color: var(--accent); font-size: 13px; font-weight: 500; margin-top: 8px; border: 1px solid var(--card-border); } nav.bottom { position: fixed; left: 0; right: 0; bottom: 0; max-width: 460px; margin: 0 auto; padding: 12px 16px; box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1); border-radius: 20px 20px 0 0; display: flex; gap: 8px; z-index: 40; backdrop-filter: blur(12px); border-top: 1px solid var(--card-border); } body[data-theme="light"] nav.bottom { background: rgba(255, 255, 255, 0.8); } body[data-theme="dark"] nav.bottom { background: rgba(15, 23, 42, 0.8); } .tab { flex: 1; text-align: center; padding: 10px 6px; border-radius: 12px; color: var(--text-muted); font-weight: 500; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; gap: 4px; } .tab i { font-size: 18px; } .tab.active { background: var(--accent); color: #fff; box-shadow: 0 5px 15px var(--accent-glow); transform: translateY(-2px); } input[type="text"], input[type="number"] { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid var(--card-border); background: var(--bg1); color: var(--text-primary); outline: none; font-family: 'Poppins', sans-serif; font-size: 14px; transition: all 0.3s ease; } input[type="text"]:focus, input[type="number"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); } .loading-full { display: flex; align-items: center; justify-content: center; min-height: 240px; } .spinner { border: 3px solid var(--card-border); border-top: 3px solid var(--accent); width: 42px; height: 42px; border-radius: 50%; animation: spin 1s linear infinite; } @keyframes spin { to { transform: rotate(360deg); } } .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; } .stat-card { background: var(--glass); border-radius: 12px; padding: 14px; text-align: center; border: 1px solid var(--card-border); } .stat-label { font-size: 12px; color: var(--text-muted); } .stat-value { font-size: 20px; font-weight: 700; margin: 6px 0; color: var(--text-primary); } .referral-box { background: linear-gradient(135deg, rgba(0, 170, 255, 0.05), rgba(0, 229, 255, 0.05)); border-radius: 12px; padding: 16px; text-align: center; margin: 16px 0; border: 1px solid var(--card-border); } .referral-code { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: 1px; margin: 10px 0; padding: 10px; background: var(--glass); border-radius: 8px; } .toast { position: fixed; left: 50%; transform: translateX(-50%); top: 20px; padding: 14px 20px; border-radius: 12px; z-index: 9999; color: #fff; display: none; font-weight: 600; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); backdrop-filter: blur(10px); max-width: 90%; text-align: center; font-size: 14px; } .toast.show { display: block; animation: toastIn 0.4s ease; } .toast.success { background: rgba(16, 185, 129, 0.9); } .toast.error { background: rgba(239, 68, 68, 0.9); } .toast.warning { background: rgba(245, 158, 11, 0.9); color: #000; } @keyframes toastIn { from { opacity: 0; transform: translate(-50%, -10px); } to { opacity: 1; transform: translate(-50%, 0); } }
     .ad-container { padding: 10px; margin: 20px 0; text-align: center; }
   </style>
 </head>
@@ -116,6 +117,7 @@
   (function () {
     'use strict';
     
+    /* ============================ THEME SWITCHER LOGIC ============================ */
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     const themeIcon = themeToggle.querySelector('i');
@@ -128,9 +130,10 @@
         const newTheme = body.dataset.theme === 'dark' ? 'light' : 'dark';
         applyTheme(newTheme);
     });
-    const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark
+    const savedTheme = localStorage.getItem('theme') || 'light';
     applyTheme(savedTheme);
 
+    /* ============================ FIREBASE CONFIG ============================ */
     const firebaseConfig = {
         // IMPORTANT: REPLACE WITH YOUR FIREBASE PROJECT CONFIGURATION
         apiKey: "AIzaSyAVnYewj5yds3gLBOJYlRhkW5dSlsa4xM8",
@@ -144,6 +147,7 @@
     const db = firebase.firestore();
     const FieldValue = firebase.firestore.FieldValue;
 
+    /* ============================ APP STATE & CONSTANTS ============================ */
     const MAX_SPINS_PER_DAY = 5;
     const POINTS_PER_RUPEE = 1000;
     let SEGMENTS = [ { title: 'Nothing', value: 0, color: '#94a3b8' }, { title: 'Mini', value: 10, color: '#f87171' }, { title: 'Mega', value: 15, color: '#fb7185' }, { title: 'Lucky', value: 20, color: '#e879f9' }, { title: 'Jackpot', value: 25, color: '#a78bfa' }, { title: 'Medium', value: 12, color: '#818cf8' }, { title: 'Grand', value: 30, color: '#60a5fa' }, { title: 'Winner', value: 100, color: '#38bdf8' } ];
@@ -237,8 +241,15 @@
                 if(configData.referralBonusPoints) REFERRAL_BONUS_POINTS = configData.referralBonusPoints;
             }
         } catch (e) { console.error("Could not fetch remote config.", e); }
+        
         renderWheel();
-        if (!tg?.initDataUnsafe?.user) { return; }
+
+        Telegram.WebApp.ready(); // Wait for TG to be ready
+
+        if (!tg?.initDataUnsafe?.user) { 
+            dom.loadingEl.querySelector('p').textContent = 'Please open inside Telegram.';
+            return; 
+        }
         currentUser = tg.initDataUnsafe.user;
         const userId = String(currentUser.id);
         const userRef = db.collection('users').doc(userId);
@@ -259,6 +270,7 @@
         } catch (e) { console.error("User creation failed:", e); showToast("Could not create profile.", "error"); return; }
         
         showInitialUI();
+        
         userRef.onSnapshot((snap) => {
             userDoc = snap.exists ? snap.data() : null;
             if (userDoc) {
@@ -272,59 +284,71 @@
     }
     
     dom.btnSpin.addEventListener('click', async () => {
-        if (isSpinning || !currentUser) return;
+        if (isSpinning || !userDoc) return;
+        
+        const spinsLeftCount = MAX_SPINS_PER_DAY - (userDoc.spinsToday || 0);
+        if (spinsLeftCount <= 0) {
+            showToast('No spins left for today!', 'warning');
+            return;
+        }
+
         isSpinning = true;
-        const userId = String(currentUser.id);
-        const userRef = db.collection('users').doc(userId);
+        dom.btnSpin.disabled = true;
+
+        const userRef = db.collection('users').doc(currentUser.id.toString());
+
         try {
-            const reserved = await db.runTransaction(async (tx) => {
-                const snap = await tx.get(userRef);
-                if (!snap.exists) throw new Error('User not found');
-                const data = snap.data();
-                const spinsToday = data.spinsToday || 0;
-                if (spinsToday >= MAX_SPINS_PER_DAY) { return { ok: false, reason: 'Daily spin limit reached' }; }
-                tx.update(userRef, { spinsToday: FieldValue.increment(1), lastSpinDate: getDateKey(new Date()) });
-                return { ok: true };
+            await userRef.update({
+                spinsToday: FieldValue.increment(1),
+                lastSpinDate: getDateKey(new Date())
             });
-            if (!reserved.ok) { showToast(reserved.reason || 'Cannot spin', 'error'); isSpinning = false; updateUIFromUserData(); return; }
-            
+
             const prizeIndex = Math.floor(Math.random() * SEGMENTS.length);
             const prize = SEGMENTS[prizeIndex];
+            
             const segAngle = 360 / SEGMENTS.length;
             const rounds = 5 + Math.floor(Math.random() * 3);
             const stopAngle = (prizeIndex * segAngle) + (segAngle / 2);
             let targetRotation = (rounds * 360) + stopAngle;
+            currentRotation = targetRotation; // Use absolute rotation
+
             dom.wheel.style.transition = 'transform 5s cubic-bezier(0.25, 1, 0.5, 1)';
-            dom.wheel.style.transform = `rotate(${targetRotation}deg)`;
+            dom.wheel.style.transform = `rotate(${currentRotation}deg)`;
             
             setTimeout(async () => {
                 await userRef.update({ points: FieldValue.increment(prize.value) });
                 showToast(`You won ${prize.value} points!`);
                 isSpinning = false;
             }, 5200);
-        } catch (err) {
-            console.error('Spin error', err); showToast(err.message || 'Spin failed', 'error');
-            isSpinning = false; updateUIFromUserData();
+
+        } catch(err) {
+            console.error('Spin Error:', err);
+            showToast('An error occurred during spin.', 'error');
+            isSpinning = false;
+            dom.btnSpin.disabled = false;
         }
     });
-
+    
     dom.applyCodeBtn.addEventListener('click', async () => {
         const code = dom.friendCodeInput.value.trim().toUpperCase();
         if (!code) return showToast('Please enter a code', 'warning');
         if (userDoc.referredBy) return showToast('You have already applied a code', 'error');
         if (code === userDoc.myReferralCode) return showToast('You cannot use your own code', 'error');
+        
         try {
             await db.runTransaction(async (tx) => {
                 const codeRef = db.collection('referralCodes').doc(code);
-                const codeSnap = await tx.get(codeRef);
-                if (!codeSnap.exists) throw new Error('Invalid referral code');
+                const codeDoc = await tx.get(codeRef);
+                if (!codeDoc.exists) throw new Error('Invalid referral code');
+                
                 const refUid = codeDoc.data().uid;
                 const meRef = db.collection('users').doc(currentUser.id.toString());
                 const refRef = db.collection('users').doc(refUid);
                 const refSnap = await tx.get(refRef);
-                if (!refSnap.exists) throw new Error('Referrer not found');
-                
+                if (!refSnap.exists) throw new Error('Referring user not found');
+
                 tx.update(meRef, { referredBy: code, points: FieldValue.increment(REFERRAL_BONUS_POINTS) });
+                
                 const refData = refSnap.data();
                 const refUpdates = { points: FieldValue.increment(REFERRAL_BONUS_POINTS) };
                 if ((refData.spinsToday || 0) >= MAX_SPINS_PER_DAY) {
@@ -333,17 +357,53 @@
                 tx.update(refRef, refUpdates);
             });
             showToast(`Success! You both received ${REFERRAL_BONUS_POINTS} points.`);
-        } catch (e) { console.error(e); showToast(e.message || 'An error occurred.', 'error'); }
+        } catch (e) {
+            console.error(e);
+            showToast(e.message || 'An error occurred.', 'error');
+        }
     });
-    
+
+    dom.withdrawBtn.addEventListener('click', async () => {
+        const upi = dom.upiInput.value.trim();
+        const amount = parseInt(dom.amountInput.value, 10);
+        if (!upi || !amount) return showToast('Please fill all fields.', 'warning');
+        if (amount < 100) return showToast('Minimum withdrawal is ₹100.', 'error');
+        const pointsNeeded = amount * POINTS_PER_RUPEE;
+        if (userDoc.points < pointsNeeded) return showToast("You don't have enough points.", 'error');
+        try {
+            dom.withdrawBtn.disabled = true;
+            const userRef = db.collection('users').doc(currentUser.id.toString());
+            const withdrawalRef = db.collection('withdrawalRequests').doc();
+            
+            const batch = db.batch();
+            batch.set(withdrawalRef, {
+                uid: currentUser.id.toString(), name: userDoc.name, upiId: upi, amount: amount,
+                points: pointsNeeded, status: 'pending', createdAt: FieldValue.serverTimestamp()
+            });
+            batch.update(userRef, { points: FieldValue.increment(-pointsNeeded) });
+            await batch.commit();
+
+            showToast('Withdrawal request submitted!');
+            dom.upiInput.value = '';
+            dom.amountInput.value = '';
+        } catch (e) {
+            console.error("Withdrawal error:", e);
+            showToast('Failed to submit request.', 'error');
+        } finally {
+            dom.withdrawBtn.disabled = false;
+        }
+    });
+
     dom.btnShare.addEventListener('click', () => {
         if (tg && userDoc?.myReferralCode) {
             const text = `Join me on Spin & Earn! Use my code ${userDoc.myReferralCode} to get a bonus!`;
-            const botUsername = tg.initDataUnsafe.bot?.username || "YOUR_BOT_USERNAME_HERE";
+            const botUsername = tg.initDataUnsafe.bot?.username || "Spintoearn247_bot";
             tg.openTelegramLink(`https://t.me/share/url?url=https://t.me/${botUsername}&text=${encodeURIComponent(text)}`);
-        } else { showToast('Cannot share from this device.', 'error'); }
+        } else {
+            showToast('Could not share. Please try inside Telegram.', 'error');
+        }
     });
-
+    
     document.querySelectorAll('.tab').forEach(tab => {
         tab.addEventListener('click', () => {
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
